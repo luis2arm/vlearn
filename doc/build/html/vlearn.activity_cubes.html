@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>vlearn.activity_cubes package &#8212; vlearn 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vlearn.aug package" href="vlearn.aug.html" />
+    <link rel="prev" title="vlearn package" href="vlearn.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="vlearn-activity-cubes-package">
+<h1>vlearn.activity_cubes package<a class="headerlink" href="#vlearn-activity-cubes-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-vlearn.activity_cubes.cubes">
+<span id="vlearn-activity-cubes-cubes-module"></span><h2>vlearn.activity_cubes.cubes module<a class="headerlink" href="#module-vlearn.activity_cubes.cubes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vlearn.activity_cubes.cubes.ActCubes">
+<em class="property">class </em><code class="sig-prename descclassname">vlearn.activity_cubes.cubes.</code><code class="sig-name descname">ActCubes</code><span class="sig-paren">(</span><em class="sig-param">rdir</em>, <em class="sig-param">gt_csv_name</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vlearn.html#vlearn.vid_reader.VReader" title="vlearn.vid_reader.VReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">vlearn.vid_reader.VReader</span></code></a></p>
+<dl class="attribute">
+<dt id="vlearn.activity_cubes.cubes.ActCubes.cubes">
+<code class="sig-name descname">cubes</code><em class="property"> = None</em><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes.cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data frame having activity cube information</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.cubes.ActCubes.extract_activity_cubes">
+<code class="sig-name descname">extract_activity_cubes</code><span class="sig-paren">(</span><em class="sig-param">frames=30</em>, <em class="sig-param">out_dir=''</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes.extract_activity_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trims activity cubes and stores them as videos. For
+writing and nowriting wenjing suggested to use 30
+frames or 1 second.
+:param frames: Number of frames in each cube.
+:type frames: int
+:param out_dir: Output location of trimmed videos. If not passed videos</p>
+<blockquote>
+<div><p>are generated at the same location as video (csv file).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>np_array</strong> (<em>boolen</em>) – When true generates a numpy array for all the trimmed
+videos.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.cubes.ActCubes.extract_activity_cubes_as_np_arrays">
+<code class="sig-name descname">extract_activity_cubes_as_np_arrays</code><span class="sig-paren">(</span><em class="sig-param">frames=30</em>, <em class="sig-param">out_dir=''</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes.extract_activity_cubes_as_np_arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trims activity cubes and stores them as videos. For
+writing and nowriting wenjing suggested to use 30
+frames or 1 second.
+:param frames: Number of frames in each cube.
+:type frames: int
+:param out_dir: Output location of trimmed videos. If not passed videos</p>
+<blockquote>
+<div><p>are generated at the same location as video (csv file).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>np_array</strong> (<em>boolen</em>) – When true generates a numpy array for all the trimmed
+videos.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.cubes.ActCubes.plot_properties">
+<code class="sig-name descname">plot_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes.plot_properties" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p>Creates histogram of  width, height and number of frames.
+These histograms are returned as list of axis handles. To
+view them please use <cite>plt.imshow()</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vlearn.activity_cubes.cubes.ActCubes.rdir">
+<code class="sig-name descname">rdir</code><em class="property"> = None</em><a class="headerlink" href="#vlearn.activity_cubes.cubes.ActCubes.rdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Root directory having ground truth csv file and videos</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-vlearn.activity_cubes">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vlearn.activity_cubes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="vlearn.activity_cubes.ActCubes">
+<em class="property">class </em><code class="sig-prename descclassname">vlearn.activity_cubes.</code><code class="sig-name descname">ActCubes</code><span class="sig-paren">(</span><em class="sig-param">rdir</em>, <em class="sig-param">gt_csv_name</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.ActCubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="vlearn.html#vlearn.vid_reader.VReader" title="vlearn.vid_reader.VReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">vlearn.vid_reader.VReader</span></code></a></p>
+<dl class="attribute">
+<dt id="vlearn.activity_cubes.ActCubes.cubes">
+<code class="sig-name descname">cubes</code><em class="property"> = None</em><a class="headerlink" href="#vlearn.activity_cubes.ActCubes.cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data frame having activity cube information</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.ActCubes.extract_activity_cubes">
+<code class="sig-name descname">extract_activity_cubes</code><span class="sig-paren">(</span><em class="sig-param">frames=30</em>, <em class="sig-param">out_dir=''</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.ActCubes.extract_activity_cubes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trims activity cubes and stores them as videos. For
+writing and nowriting wenjing suggested to use 30
+frames or 1 second.
+:param frames: Number of frames in each cube.
+:type frames: int
+:param out_dir: Output location of trimmed videos. If not passed videos</p>
+<blockquote>
+<div><p>are generated at the same location as video (csv file).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>np_array</strong> (<em>boolen</em>) – When true generates a numpy array for all the trimmed
+videos.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.ActCubes.extract_activity_cubes_as_np_arrays">
+<code class="sig-name descname">extract_activity_cubes_as_np_arrays</code><span class="sig-paren">(</span><em class="sig-param">frames=30</em>, <em class="sig-param">out_dir=''</em><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.ActCubes.extract_activity_cubes_as_np_arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trims activity cubes and stores them as videos. For
+writing and nowriting wenjing suggested to use 30
+frames or 1 second.
+:param frames: Number of frames in each cube.
+:type frames: int
+:param out_dir: Output location of trimmed videos. If not passed videos</p>
+<blockquote>
+<div><p>are generated at the same location as video (csv file).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>np_array</strong> (<em>boolen</em>) – When true generates a numpy array for all the trimmed
+videos.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="vlearn.activity_cubes.ActCubes.plot_properties">
+<code class="sig-name descname">plot_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vlearn.activity_cubes.ActCubes.plot_properties" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p>Creates histogram of  width, height and number of frames.
+These histograms are returned as list of axis handles. To
+view them please use <cite>plt.imshow()</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="vlearn.activity_cubes.ActCubes.rdir">
+<code class="sig-name descname">rdir</code><em class="property"> = None</em><a class="headerlink" href="#vlearn.activity_cubes.ActCubes.rdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Root directory having ground truth csv file and videos</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">vlearn</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">vlearn</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="vlearn.html">vlearn package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">vlearn</a><ul>
+  <li><a href="vlearn.html">vlearn package</a><ul>
+      <li>Previous: <a href="vlearn.html" title="previous chapter">vlearn package</a></li>
+      <li>Next: <a href="vlearn.aug.html" title="next chapter">vlearn.aug package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Vj.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/vlearn.activity_cubes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
